@@ -28,7 +28,7 @@ composer install
 - Import mysql database
 
 ```terminal
-TODO: mysql import command for bookings.sql
+mysql -u username -p bookings < bookings.sql
 ```
 
 - Update .env file
