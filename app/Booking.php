@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     protected $fillable = [
-        'share_name',
-        'share_price',
-        'share_qty'
+        'guest_id',
+        'room_id',
+        'checkin_dtime',
+        'checkout_dtime'
     ];
 
     public function room()

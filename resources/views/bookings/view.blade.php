@@ -25,7 +25,7 @@
             @foreach($bookings as $booking)
             <tr>
                 <td>{{$booking->id}}</td>
-                <td>{{$booking->room_name}}</td>
+                <td>{{$booking->room->room_name}}</td>
                 <td>{{$booking->checkin_dtime}}</td>
                 <td>{{$booking->checkout_dtime}}</td>
                 <td><a href="{{ route('bookings/edit',$booking->id)}}" class="btn btn-primary">Edit</a></td>

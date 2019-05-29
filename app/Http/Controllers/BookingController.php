@@ -49,13 +49,15 @@ class BookingController extends Controller
         $result = Booking::where('checkin_dtime', '<=',$request->checkin_dtime)->where('checkout_dtime', '>=',$request->checkout_dtime)->where('room_id',$request->room_id)->first();
         if(!$result){
             Booking::create($request->all());
-            return redirect('/bookings/view');
+            return redirect('bookings/view');
         }
 
-        if ($validatedData->fails() || $result) {
-            return redirect('bookings/new')
-                        ->withErrors($validator)
-                        ->withInput();
+        if (!$validatedData || $result) {
+            $rooms = Room::all();
+            $guests = Guest::all();
+            return view('bookings.new', compact('rooms','guests'))
+                ->withErrors($validator)
+                ->withInput();
         }
 
     }
