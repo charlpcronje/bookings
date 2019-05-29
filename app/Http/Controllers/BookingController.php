@@ -46,8 +46,17 @@ class BookingController extends Controller
             'checkout_dtime' => 'required'
         ]);
 
-        Booking::create($request->all());
+        $result = Booking::where('checkin_dtime', '<=',$request->checkin_dtime)->where('checkout_dtime', '>=',$request->checkout_dtime)->where('room_id',$request->room_id)->first();
+        if(!$result){
+            Booking::create($request->all());
+            return redirect('/bookings/view');
+        }
 
-        return redirect('/bookings/view');
+        if ($validatedData->fails() || $result) {
+            return redirect('bookings/new')
+                        ->withErrors($validator)
+                        ->withInput();
+        }
+
     }
 }
