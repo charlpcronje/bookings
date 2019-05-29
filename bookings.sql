@@ -131,3 +131,4 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('1', 'charl', 'charlcp@gmail.com', null, '$2y$10$BuyxdqHj9bDMrsC/hvq3NeDa.Wh/biK8zObVV7FGMlxXOZHPtyFhu', 'aC7rbpixqNFcw92XufYpWSDusClc18xpnhZUF46KvePJby1zaBckvukVgh0J', '2019-05-28 11:16:14', '2019-05-28 11:16:14');
+
