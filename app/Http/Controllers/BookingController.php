@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Booking;
 use App\Room;
 use App\Guest;
@@ -20,14 +21,13 @@ class BookingController extends Controller
         return view('bookings.view', compact('bookings'));
     }
 
-    public function edit()
+    public function checkout()
     {
-        return view('bookings.edit');
-    }
+        $booking = Booking::find(Input::get('id'));
+        $booking->checkout_dtime = now();
+        $booking->save();
 
-    public function update()
-    {
-        return view('bookings.view');
+        return redirect('bookings/view');
     }
 
     public function new()

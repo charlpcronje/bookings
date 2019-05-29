@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Bookings crud
 Route::get('/bookings/view', 'BookingController@index')->name('bookings/view');
 Route::get('/bookings/new', 'BookingController@new')->name('bookings/new');
-Route::get('/bookings/edit', 'BookingController@edit')->name('bookings/edit');
+Route::get('/bookings/checkout', 'BookingController@checkout')->name('bookings/checkout');
 
 Route::post('/bookings/store', 'BookingController@store')->name('bookings/store');
 Route::post('/bookings/update', 'BookingController@index')->name('bookings/update');

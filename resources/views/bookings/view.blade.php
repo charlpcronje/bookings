@@ -18,7 +18,8 @@
               <td>Room Name</td>
               <td>Check-In</td>
               <td>Check-Out</td>
-              <td colspan="2">Action</td>
+              <td>Status</td>
+              <td>Action</td>
             </tr>
         </thead>
         <tbody>
@@ -28,13 +29,28 @@
                 <td>{{$booking->room->room_name}}</td>
                 <td>{{$booking->checkin_dtime}}</td>
                 <td>{{$booking->checkout_dtime}}</td>
-                <td><a href="{{ route('bookings/edit',$booking->id)}}" class="btn btn-primary">Edit</a></td>
                 <td>
-                    <form action="{{ route('bookings/delete', $booking->id)}}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                    </form>
+                    <?php
+                        if (strtotime($booking->checkin_dtime) <= strtotime(now())) {
+                            ?>
+                                Checked IN
+                            <?php
+                        } else {
+                            ?>
+                                Checked OUT
+                            <?php
+                        }
+                    ?>
+                </td>
+                <td>
+                    <?php
+                        if (strtotime($booking->checkin_dtime) <= strtotime(now())) {
+                            ?>
+                                <a href="{{ route('bookings/checkout','id='.$booking->id)}}" class="btn btn-primary">Check-Out</a>
+                            <?php
+                        }
+                    ?>
+
                 </td>
             </tr>
             @endforeach
