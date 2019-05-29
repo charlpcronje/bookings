@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Bookings</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="links m-b-lg">
-                    <a href="{{ route('home') }}">Home</a>
+                    <a href="/">Home</a>
                     <a href="{{ route('bookings/view') }}">Bookings</a>
                     <a href="{{ route('guests/view') }}">Guests</a>
                     <a href="{{ route('rooms/view') }}">Rooms</a>

@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in! - click <a href="/">here</a> to or at he top left to go <a href="/">home</a>
                 </div>
             </div>
         </div>
