@@ -93,12 +93,15 @@
                     <a href="{{ route('bookings/view') }}">Bookings</a>
                     <a href="{{ route('guests/view') }}">Guests</a>
                     <a href="{{ route('rooms/view') }}">Rooms</a>
+                    <!--
                     <a href="{{ route('staff/view') }}">Staff</a>
+                    -->
                 </div>
-
+                <!--
                 <div class="links">
                     <a href="{{ route('settings/view') }}">Hotel Settings</a>
                 </div>
+                -->
             </div>
         </div>
     </body>
