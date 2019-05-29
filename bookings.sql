@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2019-05-29 07:44:23
+Date: 2019-05-29 08:05:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -20,7 +20,7 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `bookings`;
 CREATE TABLE `bookings` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `guest_id` int(11) DEFAULT NULL,
   `room_id` int(11) DEFAULT NULL,
   `checkin_dtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -131,4 +131,3 @@ CREATE TABLE `users` (
 -- Records of users
 -- ----------------------------
 INSERT INTO `users` VALUES ('1', 'charl', 'charlcp@gmail.com', null, '$2y$10$BuyxdqHj9bDMrsC/hvq3NeDa.Wh/biK8zObVV7FGMlxXOZHPtyFhu', 'aC7rbpixqNFcw92XufYpWSDusClc18xpnhZUF46KvePJby1zaBckvukVgh0J', '2019-05-28 11:16:14', '2019-05-28 11:16:14');
-
