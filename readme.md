@@ -52,4 +52,8 @@ php artisan serve
 
 - Open browser and change address to [localhost:8000](http://localhost:8000)
 
+> login with
+> email: charlcp@gmail.com
+> password: 12345678
+
 > Please report any bug to [charlcp@gmail.com](mailto:charlcp@gmail.com) or fix and request a pull request.
