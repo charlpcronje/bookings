@@ -21,10 +21,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Bookings crud
 Route::get('/bookings/view', 'BookingController@index')->name('bookings/view');
-Route::get('/bookings/new', 'BookingController@index')->name('bookings/new');
-Route::get('/bookings/edit', 'BookingController@index')->name('bookings/edit');
+Route::get('/bookings/new', 'BookingController@new')->name('bookings/new');
+Route::get('/bookings/edit', 'BookingController@edit')->name('bookings/edit');
 
-Route::get('/bookings/create', 'BookingController@index')->name('bookings/create');
+Route::get('/bookings/store', 'BookingController@store')->name('bookings/store');
 Route::get('/bookings/update', 'BookingController@index')->name('bookings/update');
 Route::get('/bookings/delete', 'BookingController@index')->name('bookings/delete');
 
@@ -32,6 +32,7 @@ Route::get('/bookings/delete', 'BookingController@index')->name('bookings/delete
 Route::get('/guests/view', 'GuestController@index')->name('guests/view');
 Route::get('/guests/new', 'GuestController@index')->name('guests/new');
 Route::get('/guests/edit', 'GuestController@index')->name('guests/edit');
+Route::get('/guests/autocomplete', 'GuestController@autocomplete')->name('guests/autocomplete');
 
 Route::get('/guests/create', 'GuestController@index')->name('guests/create');
 Route::get('/guests/update', 'GuestController@index')->name('guests/update');
