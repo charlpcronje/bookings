@@ -16,7 +16,7 @@ class BookingController extends Controller
 
     public function index()
     {
-        $bookings = Booking::all();
+        $bookings = Booking::with('room')->get();
         return view('bookings.view', compact('bookings'));
     }
 
@@ -37,8 +37,17 @@ class BookingController extends Controller
         return view('bookings.new', compact('rooms','guests'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return view('bookings.view');
+        $validatedData = $request->validate([
+            'guest_id' => 'required|numeric',
+            'room_id' => 'required|numeric',
+            'checkin_dtime' => 'required',
+            'checkout_dtime' => 'required'
+        ]);
+
+        Booking::create($request->all());
+
+        return redirect('/bookings/view');
     }
 }
