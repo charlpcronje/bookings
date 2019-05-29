@@ -46,6 +46,11 @@ DB_PASSWORD=
 
 - Serve website to [localhost](http://localhost:8000)
 
+> login with
+> email: charlcp@gmail.com
+> password: 12345678
+
+
 ```terminal
 php artisan serve
 ```
