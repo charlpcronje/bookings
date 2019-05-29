@@ -50,6 +50,6 @@ DB_PASSWORD=
 php artisan serve
 ```
 
-- Open browser and change address to [localhost](http://localhost:8000)
+- Open browser and change address to [localhost:8000](http://localhost:8000)
 
 > Please report any bug to [charlcp@gmail.com](mailto:charlcp@gmail.com) or fix and request a pull request.
