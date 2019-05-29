@@ -5,10 +5,10 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-10">
-            <h2>Bookings</h2>
+            <h2>Guests</h2>
         </div>
         <div class="col-sm-2">
-            <a href="{{ route('bookings/new') }}">NEW</a>
+            <a href="{{ route('guests/new') }}">NEW</a>
         </div>
     </div>
     <table class="table table-striped">

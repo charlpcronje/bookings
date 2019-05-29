@@ -31,22 +31,37 @@ class GuestController extends Controller
 
     public function edit()
     {
-        return view('bookings.edit');
+        return view('guests.edit');
     }
 
     public function update()
     {
-        return view('bookings.view');
+        return view('guests.view');
     }
 
     public function new()
     {
-        $rooms = Room::all();
-        return view('bookings.new', compact('rooms'));
+        return view('guests.new', compact('rooms'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        return view('bookings.view');
+        $validatedData = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'id_number' => 'required|unique:guests',
+            'mobile' => 'required'
+        ]);
+
+
+        if (!$validatedData) {
+            $guests = Guest::all();
+            return view('guests.new', compact('guests'))
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        Guest::create($request->all());
+        return redirect('guests/view');
     }
 }

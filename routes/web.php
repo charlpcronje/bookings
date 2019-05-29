@@ -30,11 +30,11 @@ Route::post('/bookings/delete', 'BookingController@index')->name('bookings/delet
 
 // Guests crud
 Route::get('/guests/view', 'GuestController@index')->name('guests/view');
-Route::get('/guests/new', 'GuestController@index')->name('guests/new');
-Route::get('/guests/edit', 'GuestController@index')->name('guests/edit');
+Route::get('/guests/new', 'GuestController@new')->name('guests/new');
+Route::get('/guests/edit', 'GuestController@edit')->name('guests/edit');
 Route::get('/guests/autocomplete', 'GuestController@autocomplete')->name('guests/autocomplete');
 
-Route::post('/guests/create', 'GuestController@index')->name('guests/create');
+Route::post('/guests/store', 'GuestController@store')->name('guests/store');
 Route::post('/guests/update', 'GuestController@index')->name('guests/update');
 Route::post('/guests/delete', 'GuestController@index')->name('guests/delete');
 
