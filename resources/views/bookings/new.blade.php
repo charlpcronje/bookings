@@ -30,7 +30,11 @@
             <div class="form-group">
                 @csrf
                 <label for="guest_id">Select Guest:</label>
-                <input type="text" class="form-control typeahead" name="guest_id"/>
+                <select name="guest_id" class="form-control">
+                    @foreach ($guests as $guest)
+                        <option value="{{ $guest->id }}">{{ $guest->first_name }} {{ $guest->last_name }} : {{ $guest->id_number }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="room_id">Select Room:</label>
@@ -55,7 +59,7 @@
 
 <script type="text/javascript">
     var path = "{{ route('guests/autocomplete') }}";
-    $('input.typeahead').typeahead({
+    $('.typeahead').typeahead({
         source:  function (query, process) {
             return $.get(path, { query: query }, function (data) {
                 return process(data);

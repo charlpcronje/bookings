@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Booking;
 use App\Room;
+use App\Guest;
 
 class BookingController extends Controller
 {
@@ -32,7 +33,8 @@ class BookingController extends Controller
     public function new()
     {
         $rooms = Room::all();
-        return view('bookings.new', compact('rooms'));
+        $guests = Guest::all();
+        return view('bookings.new', compact('rooms','guests'));
     }
 
     public function store()
